@@ -137,14 +137,22 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EmployeeManagement.Designer.vb">
-      <DependentUpon>EmployeeManagement.vb</DependentUpon>
+    <Compile Include="AddDepartment.Designer.vb">
+      <DependentUpon>AddDepartment.vb</DependentUpon>
     </Compile>
-    <Compile Include="EmployeeManagement.vb" />
+    <Compile Include="AddDepartment.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Adminlogin.Designer.vb">
       <DependentUpon>Adminlogin.vb</DependentUpon>
     </Compile>
     <Compile Include="Adminlogin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BackUpDatabase.Designer.vb">
+      <DependentUpon>BackUpDatabase.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BackUpDatabase.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="DBConnection.vb" />
@@ -152,6 +160,18 @@
       <DependentUpon>EmployeeDashboard.vb</DependentUpon>
     </Compile>
     <Compile Include="EmployeeDashboard.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeManagement.Designer.vb">
+      <DependentUpon>EmployeeManagement.vb</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeManagement.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeRegister.Designer.vb">
+      <DependentUpon>EmployeeRegister.vb</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeRegister.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.vb">
@@ -203,14 +223,23 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="EmployeeManagement.resx">
-      <DependentUpon>EmployeeManagement.vb</DependentUpon>
+    <EmbeddedResource Include="AddDepartment.resx">
+      <DependentUpon>AddDepartment.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Adminlogin.resx">
       <DependentUpon>Adminlogin.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="BackUpDatabase.resx">
+      <DependentUpon>BackUpDatabase.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EmployeeDashboard.resx">
       <DependentUpon>EmployeeDashboard.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeManagement.resx">
+      <DependentUpon>EmployeeManagement.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeRegister.resx">
+      <DependentUpon>EmployeeRegister.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>

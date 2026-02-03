@@ -30,17 +30,13 @@ Partial Class AdminDashboard
         Me.EmployeeManagementToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DepartmentsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ManageDepartmentsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.AddDepartmentToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.AttendanceToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ViewAttendanceToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SettingsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BackupDatabaseToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ChangePasswordToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.MenuStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -51,10 +47,10 @@ Partial Class AdminDashboard
         Me.MenuStrip1.Dock = System.Windows.Forms.DockStyle.None
         Me.MenuStrip1.GripMargin = New System.Windows.Forms.Padding(2, 2, 0, 2)
         Me.MenuStrip1.ImageScalingSize = New System.Drawing.Size(24, 24)
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.EmployeesToolStripMenuItem, Me.DepartmentsToolStripMenuItem, Me.AttendanceToolStripMenuItem, Me.SettingsToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.EmployeesToolStripMenuItem, Me.DepartmentsToolStripMenuItem, Me.SettingsToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(-1, 104)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(539, 36)
+        Me.MenuStrip1.Size = New System.Drawing.Size(601, 36)
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -70,7 +66,7 @@ Partial Class AdminDashboard
         'LogoutToolStripMenuItem
         '
         Me.LogoutToolStripMenuItem.Name = "LogoutToolStripMenuItem"
-        Me.LogoutToolStripMenuItem.Size = New System.Drawing.Size(270, 36)
+        Me.LogoutToolStripMenuItem.Size = New System.Drawing.Size(177, 36)
         Me.LogoutToolStripMenuItem.Text = "Logout"
         '
         'EmployeesToolStripMenuItem
@@ -90,7 +86,7 @@ Partial Class AdminDashboard
         '
         'DepartmentsToolStripMenuItem
         '
-        Me.DepartmentsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ManageDepartmentsToolStripMenuItem, Me.AddDepartmentToolStripMenuItem})
+        Me.DepartmentsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ManageDepartmentsToolStripMenuItem})
         Me.DepartmentsToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DepartmentsToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.DepartmentsToolStripMenuItem.Name = "DepartmentsToolStripMenuItem"
@@ -103,28 +99,9 @@ Partial Class AdminDashboard
         Me.ManageDepartmentsToolStripMenuItem.Size = New System.Drawing.Size(270, 36)
         Me.ManageDepartmentsToolStripMenuItem.Text = "Add Department"
         '
-        'AddDepartmentToolStripMenuItem
-        '
-        Me.AddDepartmentToolStripMenuItem.Name = "AddDepartmentToolStripMenuItem"
-        Me.AddDepartmentToolStripMenuItem.Size = New System.Drawing.Size(270, 36)
-        Me.AddDepartmentToolStripMenuItem.Text = "View Department"
-        '
-        'AttendanceToolStripMenuItem
-        '
-        Me.AttendanceToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ViewAttendanceToolStripMenuItem})
-        Me.AttendanceToolStripMenuItem.Name = "AttendanceToolStripMenuItem"
-        Me.AttendanceToolStripMenuItem.Size = New System.Drawing.Size(118, 32)
-        Me.AttendanceToolStripMenuItem.Text = "Attendance"
-        '
-        'ViewAttendanceToolStripMenuItem
-        '
-        Me.ViewAttendanceToolStripMenuItem.Name = "ViewAttendanceToolStripMenuItem"
-        Me.ViewAttendanceToolStripMenuItem.Size = New System.Drawing.Size(270, 34)
-        Me.ViewAttendanceToolStripMenuItem.Text = "View Attendance"
-        '
         'SettingsToolStripMenuItem
         '
-        Me.SettingsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BackupDatabaseToolStripMenuItem, Me.ChangePasswordToolStripMenuItem})
+        Me.SettingsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BackupDatabaseToolStripMenuItem})
         Me.SettingsToolStripMenuItem.Name = "SettingsToolStripMenuItem"
         Me.SettingsToolStripMenuItem.Size = New System.Drawing.Size(92, 32)
         Me.SettingsToolStripMenuItem.Text = "Settings"
@@ -134,12 +111,6 @@ Partial Class AdminDashboard
         Me.BackupDatabaseToolStripMenuItem.Name = "BackupDatabaseToolStripMenuItem"
         Me.BackupDatabaseToolStripMenuItem.Size = New System.Drawing.Size(270, 34)
         Me.BackupDatabaseToolStripMenuItem.Text = "Backup Database"
-        '
-        'ChangePasswordToolStripMenuItem
-        '
-        Me.ChangePasswordToolStripMenuItem.Name = "ChangePasswordToolStripMenuItem"
-        Me.ChangePasswordToolStripMenuItem.Size = New System.Drawing.Size(270, 34)
-        Me.ChangePasswordToolStripMenuItem.Text = "Change Password"
         '
         'Label1
         '
@@ -161,6 +132,17 @@ Partial Class AdminDashboard
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(949, 101)
         Me.Panel1.TabIndex = 2
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.White
+        Me.Label3.Location = New System.Drawing.Point(361, 54)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(210, 32)
+        Me.Label3.TabIndex = 3
+        Me.Label3.Text = "Admin Dashboard"
         '
         'Label2
         '
@@ -184,17 +166,6 @@ Partial Class AdminDashboard
         Me.PictureBox1.TabIndex = 3
         Me.PictureBox1.TabStop = False
         '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(717, 52)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(210, 32)
-        Me.Label3.TabIndex = 3
-        Me.Label3.Text = "Admin Dashboard"
-        '
         'AdminDashboard
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
@@ -205,8 +176,10 @@ Partial Class AdminDashboard
         Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Label1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "AdminDashboard"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FrmDashboard"
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
@@ -226,12 +199,8 @@ Partial Class AdminDashboard
     Friend WithEvents DepartmentsToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ManageDepartmentsToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Label1 As Label
-    Friend WithEvents AddDepartmentToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents AttendanceToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ViewAttendanceToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents SettingsToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents BackupDatabaseToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ChangePasswordToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label2 As Label
     Friend WithEvents PictureBox1 As PictureBox

@@ -11,7 +11,7 @@
 
     End Sub
 
-    Private Sub AddDepartmentToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AddDepartmentToolStripMenuItem.Click
+    Private Sub AddDepartmentToolStripMenuItem_Click(sender As Object, e As EventArgs)
 
     End Sub
 
@@ -36,5 +36,22 @@
 
     Private Sub AdminDashboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+    End Sub
+
+    Private Sub FileToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FileToolStripMenuItem.Click
+
+    End Sub
+
+    Private Sub ManageDepartmentsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ManageDepartmentsToolStripMenuItem.Click
+        Dim AdminDashboard As New AddDepartment
+        AdminDashboard.Show()
+        Me.Hide()
+    End Sub
+
+
+    Private Sub BackupDatabaseToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BackupDatabaseToolStripMenuItem.Click
+        Dim AdminDashboard As New BackUpDatabase   ' Employee login form
+        AdminDashboard.Show()
+        Me.Hide()
     End Sub
 End Class

@@ -38,7 +38,7 @@ Public Class EmployeeLogin2
                 conn.Open()
 
                 ' Case-insensitive username comparison
-                Dim query As String = "SELECT COUNT(*) FROM employee WHERE LOWER(Username)=LOWER(@Username) AND Password=@Password"
+                Dim query As String = "SELECT COUNT(*) FROM Registration WHERE LOWER(Username)=LOWER(@Username) AND Password=@Password"
 
                 Using cmd As New MySqlCommand(query, conn)
                     cmd.Parameters.AddWithValue("@Username", Username)

@@ -3,7 +3,6 @@ Imports System.Security.Cryptography
 Imports System.Text
 Imports System.Windows.Forms
 
-
 Public Class FrmRegisterEmployee
     Private Function HashPassword(password As String) As String
         Using sha256 As SHA256 = SHA256.Create()
@@ -19,19 +18,14 @@ Public Class FrmRegisterEmployee
     Private Sub Label12_Click(sender As Object, e As EventArgs) Handles Label12.Click
         Dim frm2 As New EmployeeLogin2
         frm2.Show()
-        Me.Hide()   ' hides login form
-
-
+        Me.Hide()
     End Sub
 
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
         Dim frm2 As New Form1
         frm2.Show()
-        Me.Hide()   ' hides login form
-
-
+        Me.Hide()
     End Sub
-
 
     Private Sub btnRegister_Click(sender As Object, e As EventArgs) Handles btnRegister.Click
         Dim EmployeeID As String = txtEmployeeID.Text.Trim()
@@ -42,7 +36,7 @@ Public Class FrmRegisterEmployee
         Dim ConfirmPassword As String = txtComfirmpassword.Text.Trim()
         Dim Gender As String = ""
 
-        'Check for empty fields 
+        ' Check for empty fields
         If EmployeeID = "" OrElse FullName = "" OrElse Username = "" OrElse Email = "" OrElse Password = "" OrElse ConfirmPassword = "" Then
             MessageBox.Show("Please fill in all fields.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Exit Sub
@@ -72,7 +66,7 @@ Public Class FrmRegisterEmployee
                 conn.Open()
 
                 ' Check if username already exists
-                Dim checkQuery As String = "SELECT COUNT(*) FROM employee WHERE Username=@Username"
+                Dim checkQuery As String = "SELECT COUNT(*) FROM Registration WHERE Username=@Username"
                 Using checkCmd As New MySqlCommand(checkQuery, conn)
                     checkCmd.Parameters.AddWithValue("@Username", Username)
                     Dim count As Integer = Convert.ToInt32(checkCmd.ExecuteScalar())
@@ -83,7 +77,8 @@ Public Class FrmRegisterEmployee
                 End Using
 
                 ' Insert new employee
-                Dim query As String = "INSERT INTO employee (EmployeeID, FullName, Username, Email, Password, Gender) VALUES (@EmployeeID, @FullName, @Username, @Email, @Password, @Gender)"
+                Dim query As String = "INSERT INTO Registration (EmployeeID, FullName, Username, Email, Password, Gender) 
+                                       VALUES (@EmployeeID, @FullName, @Username, @Email, @Password, @Gender)"
                 Using cmd As New MySqlCommand(query, conn)
                     cmd.Parameters.AddWithValue("@EmployeeID", EmployeeID)
                     cmd.Parameters.AddWithValue("@Fullname", FullName)
@@ -95,13 +90,15 @@ Public Class FrmRegisterEmployee
                 End Using
             End Using
 
+            ' ✅ Success message + redirect to login
+            MessageBox.Show("Registration successful! Redirecting to login...", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
-            MessageBox.Show("Registration successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Dim loginForm As New EmployeeLogin2   ' Employee login form
+            loginForm.Show()
+            Me.Hide()
+
         Catch ex As Exception
             MessageBox.Show("Error: " & ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
-
-
-
     End Sub
 End Class
