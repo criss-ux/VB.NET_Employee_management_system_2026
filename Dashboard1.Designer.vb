@@ -35,7 +35,7 @@ Partial Class Dashboard1
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.btnDetails = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.btnMenu = New System.Windows.Forms.Button()
+        Me.btnHome = New System.Windows.Forms.Button()
         Me.PictureBox5 = New System.Windows.Forms.PictureBox()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -102,7 +102,7 @@ Partial Class Dashboard1
         Me.Panel2.Controls.Add(Me.PictureBox2)
         Me.Panel2.Controls.Add(Me.btnDetails)
         Me.Panel2.Controls.Add(Me.PictureBox1)
-        Me.Panel2.Controls.Add(Me.btnMenu)
+        Me.Panel2.Controls.Add(Me.btnHome)
         Me.Panel2.Location = New System.Drawing.Point(5, 119)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(230, 568)
@@ -181,17 +181,17 @@ Partial Class Dashboard1
         Me.PictureBox1.TabIndex = 2
         Me.PictureBox1.TabStop = False
         '
-        'btnMenu
+        'btnHome
         '
-        Me.btnMenu.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.btnMenu.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnMenu.ForeColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.btnMenu.Location = New System.Drawing.Point(57, 48)
-        Me.btnMenu.Name = "btnMenu"
-        Me.btnMenu.Size = New System.Drawing.Size(147, 53)
-        Me.btnMenu.TabIndex = 2
-        Me.btnMenu.Text = "Menu"
-        Me.btnMenu.UseVisualStyleBackColor = True
+        Me.btnHome.DialogResult = System.Windows.Forms.DialogResult.Cancel
+        Me.btnHome.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnHome.ForeColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.btnHome.Location = New System.Drawing.Point(57, 48)
+        Me.btnHome.Name = "btnHome"
+        Me.btnHome.Size = New System.Drawing.Size(147, 53)
+        Me.btnHome.TabIndex = 2
+        Me.btnHome.Text = "Home"
+        Me.btnHome.UseVisualStyleBackColor = True
         '
         'PictureBox5
         '
@@ -232,7 +232,7 @@ Partial Class Dashboard1
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
-    Friend WithEvents btnMenu As Button
+    Friend WithEvents btnHome As Button
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents btnLogout As Button

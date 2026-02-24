@@ -44,7 +44,13 @@ Public Class BackUpDatabase
         End Try
     End Sub
 
-    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs)
+        Dim frm2 As New AdminDashboard
+        frm2.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
         Dim frm2 As New AdminDashboard
         frm2.Show()
         Me.Hide()

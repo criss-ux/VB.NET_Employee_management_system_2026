@@ -58,10 +58,8 @@ Public Class AddDepartment
     ' ============================
     ' Navigation back to Admin Dashboard
     ' ============================
-    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
-        Dim frm2 As New AdminDashboard
-        frm2.Show()
-        Me.Hide()
+    Private Sub PictureBox2_Click(sender As Object, e As EventArgs)
+
     End Sub
 
     ' ============================
@@ -102,5 +100,11 @@ Public Class AddDepartment
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Error)
         End Try
+    End Sub
+
+    Private Sub btnMenu_Click(sender As Object, e As EventArgs) Handles btnHome.Click
+        Dim frm2 As New AdminDashboard
+        frm2.Show()
+        Me.Hide()
     End Sub
 End Class
