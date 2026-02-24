@@ -1,4 +1,5 @@
-﻿Public Class AdminDashboard
+﻿Imports System.Data.SqlClient
+Public Class AdminDashboard
     Private Sub ViewEmployeesToolStripMenuItem_Click(sender As Object, e As EventArgs)
 
     End Sub
@@ -25,7 +26,7 @@
     )
 
         If result = DialogResult.Yes Then
-            Adminlogin.Show()
+            LoginForm.Show()
             Me.Close()
         End If
     End Sub
@@ -53,5 +54,9 @@
         Dim AdminDashboard As New BackUpDatabase   ' Employee login form
         AdminDashboard.Show()
         Me.Hide()
+    End Sub
+
+    Private Sub EmployeesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EmployeesToolStripMenuItem.Click
+
     End Sub
 End Class

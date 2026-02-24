@@ -1,8 +1,12 @@
-﻿Imports System.Diagnostics
+﻿Imports System.Data.SqlClient
 Imports System.Windows.Forms
 Imports System.IO
 
 Public Class BackUpDatabase
+
+    ' ✅ Connection string points to SQL Server EmployeeDB
+    ' Replace YOUR_SERVER_NAME with your SQL Server instance (e.g., "localhost", "SQLEXPRESS", or "Criss-Johnson")
+    Dim connString As String = "Server=localhost;Database=EmployeeDB;Integrated Security=True;"
 
     Private Sub BackUpDatabase_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' Optional: create backup folder if missing
@@ -18,36 +22,21 @@ Public Class BackUpDatabase
     Private Sub BackupDatabase()
         Try
             ' Path to save backup file
-            Dim backupFile As String = "C:\Backups\employee_db_" & DateTime.Now.ToString("yyyyMMdd_HHmmss") & ".sql"
+            Dim backupFile As String = "C:\Backups\EmployeeDB_" & DateTime.Now.ToString("yyyyMMdd_HHmmss") & ".bak"
 
-            ' Path to mysqldump.exe (adjust if installed elsewhere)
-            Dim mysqldumpPath As String = "C:\xampp\mysql\bin\mysqldump.exe"
+            Using conn As New SqlConnection(connString)
+                conn.Open()
 
-            ' ✅ No password used
-            Dim arguments As String = "-u root employee_db --result-file=""" & backupFile & """ --routines --events --triggers"
+                ' ✅ SQL Server BACKUP DATABASE command
+                Dim query As String = "BACKUP DATABASE EmployeeDB TO DISK = @backupFile WITH INIT, FORMAT, NAME = 'EmployeeDB-FullBackup'"
+                Using cmd As New SqlCommand(query, conn)
+                    cmd.Parameters.AddWithValue("@backupFile", backupFile)
+                    cmd.ExecuteNonQuery()
+                End Using
+            End Using
 
-            ' Configure process
-            Dim psi As New ProcessStartInfo()
-            psi.FileName = mysqldumpPath
-            psi.Arguments = arguments
-            psi.UseShellExecute = False
-            psi.RedirectStandardOutput = True
-            psi.RedirectStandardError = True
-            psi.CreateNoWindow = True
-
-            ' Start process
-            Dim process As Process = Process.Start(psi)
-            process.WaitForExit()
-
-            ' Check for errors
-            Dim errorOutput As String = process.StandardError.ReadToEnd()
-            If String.IsNullOrEmpty(errorOutput) Then
-                MessageBox.Show("Backup completed successfully! File saved at: " & backupFile,
-                                "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            Else
-                MessageBox.Show("Backup failed: " & errorOutput,
-                                "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            End If
+            MessageBox.Show("Backup completed successfully! File saved at: " & backupFile,
+                            "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
         Catch ex As Exception
             MessageBox.Show("Error running backup: " & ex.Message,

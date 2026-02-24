@@ -8,7 +8,7 @@
     End Sub
 
     Private Sub btnlogin_Click(sender As Object, e As EventArgs)
-        Dim frm2 As New EmployeeLogin2
+        Dim frm2 As New LoginForm
         frm2.Show()
         Me.Hide()   ' hides login form
     End Sub
@@ -25,19 +25,10 @@
         Label2.BackColor = Color.Transparent
     End Sub
 
-    Private Sub btnLogin_Click_1(sender As Object, e As EventArgs) Handles btnLogin.Click
-        Dim frm2 As New EmployeeLogin2
+    Private Sub btnLoginAsAdmin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
+        Dim frm2 As New LoginForm
         frm2.Show()
         Me.Hide()   ' hides login form
-
-
-    End Sub
-
-    Private Sub btnLoginAsAdmin_Click(sender As Object, e As EventArgs) Handles btnLoginAsAdmin.Click
-        Dim frm2 As New Adminlogin
-        frm2.Show()
-        Me.Hide()   ' hides login form
-
 
     End Sub
 

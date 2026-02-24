@@ -38,6 +38,7 @@ Partial Class EmployeeManagement
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Panel2 = New System.Windows.Forms.Panel()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
@@ -47,11 +48,11 @@ Partial Class EmployeeManagement
         '
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ColumnEmployeeID, Me.ColumnFullName, Me.ColumnGender, Me.ColumnPhone, Me.ColumnDepartmentName})
-        Me.DataGridView1.Location = New System.Drawing.Point(12, 241)
+        Me.DataGridView1.Location = New System.Drawing.Point(12, 235)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowHeadersWidth = 62
         Me.DataGridView1.RowTemplate.Height = 28
-        Me.DataGridView1.Size = New System.Drawing.Size(1150, 465)
+        Me.DataGridView1.Size = New System.Drawing.Size(1150, 414)
         Me.DataGridView1.TabIndex = 79
         '
         'ColumnEmployeeID
@@ -131,19 +132,19 @@ Partial Class EmployeeManagement
         Me.btnDelete.ForeColor = System.Drawing.Color.White
         Me.btnDelete.Location = New System.Drawing.Point(789, 139)
         Me.btnDelete.Name = "btnDelete"
-        Me.btnDelete.Size = New System.Drawing.Size(117, 59)
+        Me.btnDelete.Size = New System.Drawing.Size(147, 53)
         Me.btnDelete.TabIndex = 75
         Me.btnDelete.Text = "Delete"
         Me.btnDelete.UseVisualStyleBackColor = False
         '
         'btnSearch
         '
-        Me.btnSearch.BackColor = System.Drawing.Color.Blue
+        Me.btnSearch.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.btnSearch.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSearch.ForeColor = System.Drawing.Color.White
         Me.btnSearch.Location = New System.Drawing.Point(493, 139)
         Me.btnSearch.Name = "btnSearch"
-        Me.btnSearch.Size = New System.Drawing.Size(115, 59)
+        Me.btnSearch.Size = New System.Drawing.Size(147, 53)
         Me.btnSearch.TabIndex = 73
         Me.btnSearch.Text = "Search"
         Me.btnSearch.UseVisualStyleBackColor = False
@@ -178,9 +179,9 @@ Partial Class EmployeeManagement
         Me.Label7.ForeColor = System.Drawing.Color.White
         Me.Label7.Location = New System.Drawing.Point(319, 0)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(553, 45)
+        Me.Label7.Size = New System.Drawing.Size(547, 45)
         Me.Label7.TabIndex = 1
-        Me.Label7.Text = "EMPLOYEE MANAGEMENT SYSTEM"
+        Me.Label7.Text = "EMPLOYEE REGISTRATION SYSTEM"
         '
         'Panel1
         '
@@ -191,14 +192,23 @@ Partial Class EmployeeManagement
         Me.Panel1.Font = New System.Drawing.Font("Ebrima", 16.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Panel1.Location = New System.Drawing.Point(-5, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1408, 87)
+        Me.Panel1.Size = New System.Drawing.Size(1408, 101)
         Me.Panel1.TabIndex = 72
+        '
+        'Panel2
+        '
+        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Panel2.Location = New System.Drawing.Point(-5, 655)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(1247, 85)
+        Me.Panel2.TabIndex = 80
         '
         'EmployeeManagement
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1240, 698)
+        Me.ClientSize = New System.Drawing.Size(1240, 738)
+        Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.txtSearch)
         Me.Controls.Add(Me.Label8)
@@ -232,4 +242,5 @@ Partial Class EmployeeManagement
     Friend WithEvents ColumnGender As DataGridViewTextBoxColumn
     Friend WithEvents ColumnPhone As DataGridViewTextBoxColumn
     Friend WithEvents ColumnDepartmentName As DataGridViewTextBoxColumn
+    Friend WithEvents Panel2 As Panel
 End Class

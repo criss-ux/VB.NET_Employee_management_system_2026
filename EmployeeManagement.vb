@@ -1,8 +1,10 @@
-﻿Imports MySql.Data.MySqlClient
+﻿Imports System.Data.SqlClient
 
 Public Class EmployeeManagement
 
-    Dim conn As New MySqlConnection("server=localhost;userid=root;password=;database=employee_db")
+    ' ✅ Connection string points to SQL Server EmployeeDB
+    ' Replace YOUR_SERVER_NAME with your SQL Server instance (e.g., "localhost", "SQLEXPRESS", or "Criss-Johnson")
+    Dim conn As New SqlConnection("Server=localhost;Database=EmployeeDB;Integrated Security=True;")
 
     Private Sub EmployeeManagement_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LoadEmployeeData()
@@ -11,17 +13,20 @@ Public Class EmployeeManagement
         DataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect
     End Sub
 
+    ' ============================
+    ' Load all employees into DataGridView
+    ' ============================
     Private Sub LoadEmployeeData()
         Try
             If conn.State = ConnectionState.Closed Then conn.Open()
 
             Dim query As String = "
-                SELECT e.EmployeeID, e.FullName, e.Gender, e.Phone, d.DepartmentName
-                FROM employee e
-                JOIN department d ON e.DepartmentID = d.DepartmentID"
+                SELECT e.EmployeeID, e.Fullname, e.Gender, e.Phone, d.DepartmentName
+                FROM Employees e
+                JOIN Department d ON e.DepartmentID = d.DepartmentID"
 
-            Dim cmd As New MySqlCommand(query, conn)
-            Dim adapter As New MySqlDataAdapter(cmd)
+            Dim cmd As New SqlCommand(query, conn)
+            Dim adapter As New SqlDataAdapter(cmd)
             Dim table As New DataTable()
             adapter.Fill(table)
             DataGridView1.DataSource = table
@@ -33,6 +38,9 @@ Public Class EmployeeManagement
         End Try
     End Sub
 
+    ' ============================
+    ' Delete selected employee
+    ' ============================
     Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
         If DataGridView1.CurrentRow IsNot Nothing AndAlso DataGridView1.CurrentRow.Cells(0).Value IsNot Nothing Then
             Dim empID As String = DataGridView1.CurrentRow.Cells(0).Value.ToString()
@@ -45,8 +53,8 @@ Public Class EmployeeManagement
             If result = DialogResult.Yes Then
                 Try
                     conn.Open()
-                    Dim query As String = "DELETE FROM employee WHERE EmployeeID = @EmployeeID"
-                    Dim cmd As New MySqlCommand(query, conn)
+                    Dim query As String = "DELETE FROM Employees WHERE EmployeeID = @EmployeeID"
+                    Dim cmd As New SqlCommand(query, conn)
                     cmd.Parameters.AddWithValue("@EmployeeID", empID)
                     cmd.ExecuteNonQuery()
 
@@ -63,6 +71,9 @@ Public Class EmployeeManagement
         End If
     End Sub
 
+    ' ============================
+    ' Search employees by name or department
+    ' ============================
     Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
         Try
             If conn.State = ConnectionState.Closed Then conn.Open()
@@ -70,15 +81,15 @@ Public Class EmployeeManagement
             Dim searchText As String = txtSearch.Text.Trim()
 
             Dim query As String = "
-                SELECT e.EmployeeID, e.FullName, e.Gender, e.Phone, d.DepartmentName
-                FROM employee e
-                JOIN department d ON e.DepartmentID = d.DepartmentID
-                WHERE e.FullName LIKE @search OR d.DepartmentName LIKE @search"
+                SELECT e.EmployeeID, e.Fullname, e.Gender, e.Phone, d.DepartmentName
+                FROM Employees e
+                JOIN Department d ON e.DepartmentID = d.DepartmentID
+                WHERE e.Fullname LIKE @search OR d.DepartmentName LIKE @search"
 
-            Dim cmd As New MySqlCommand(query, conn)
+            Dim cmd As New SqlCommand(query, conn)
             cmd.Parameters.AddWithValue("@search", "%" & searchText & "%")
 
-            Dim adapter As New MySqlDataAdapter(cmd)
+            Dim adapter As New SqlDataAdapter(cmd)
             Dim table As New DataTable()
             adapter.Fill(table)
             DataGridView1.DataSource = table
@@ -90,6 +101,9 @@ Public Class EmployeeManagement
         End Try
     End Sub
 
+    ' ============================
+    ' Navigation back to Admin Dashboard
+    ' ============================
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
         Dim frm2 As New AdminDashboard
         frm2.Show()

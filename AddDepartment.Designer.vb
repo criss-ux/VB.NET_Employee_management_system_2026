@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class AddDepartment
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class AddDepartment
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(AddDepartment))
         Me.Panel3 = New System.Windows.Forms.Panel()
@@ -34,7 +34,6 @@ Partial Class AddDepartment
         Me.DataGridViewDepartments = New System.Windows.Forms.DataGridView()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.btnEdit = New System.Windows.Forms.Button()
-        Me.ColumnDepartment = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel3.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -82,11 +81,11 @@ Partial Class AddDepartment
         Me.Label2.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Label2.Font = New System.Drawing.Font("Segoe UI", 16.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(238, 8)
+        Me.Label2.Location = New System.Drawing.Point(263, 8)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(553, 45)
+        Me.Label2.Size = New System.Drawing.Size(547, 45)
         Me.Label2.TabIndex = 1
-        Me.Label2.Text = "EMPLOYEE MANAGEMENT SYSTEM"
+        Me.Label2.Text = "EMPLOYEE REGISTRATION SYSTEM"
         '
         'PictureBox1
         '
@@ -135,7 +134,6 @@ Partial Class AddDepartment
         'DataGridViewDepartments
         '
         Me.DataGridViewDepartments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridViewDepartments.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ColumnDepartment})
         Me.DataGridViewDepartments.Location = New System.Drawing.Point(-4, 326)
         Me.DataGridViewDepartments.Name = "DataGridViewDepartments"
         Me.DataGridViewDepartments.RowHeadersWidth = 62
@@ -157,7 +155,7 @@ Partial Class AddDepartment
         '
         'btnEdit
         '
-        Me.btnEdit.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.btnEdit.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnEdit.Font = New System.Drawing.Font("Segoe UI", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnEdit.ForeColor = System.Drawing.Color.White
         Me.btnEdit.Location = New System.Drawing.Point(210, 226)
@@ -166,15 +164,6 @@ Partial Class AddDepartment
         Me.btnEdit.TabIndex = 22
         Me.btnEdit.Text = "Edit"
         Me.btnEdit.UseVisualStyleBackColor = False
-        '
-        'ColumnDepartment
-        '
-        Me.ColumnDepartment.DataPropertyName = "Department"
-        Me.ColumnDepartment.HeaderText = "Department"
-        Me.ColumnDepartment.MinimumWidth = 8
-        Me.ColumnDepartment.Name = "ColumnDepartment"
-        Me.ColumnDepartment.ReadOnly = True
-        Me.ColumnDepartment.Width = 150
         '
         'AddDepartment
         '
@@ -213,5 +202,4 @@ Partial Class AddDepartment
     Friend WithEvents Label4 As Label
     Friend WithEvents btnEdit As Button
     Friend WithEvents PictureBox2 As PictureBox
-    Friend WithEvents ColumnDepartment As DataGridViewTextBoxColumn
 End Class

@@ -74,9 +74,9 @@ Namespace My
     Friend Module MySettingsProperty
         
         <Global.System.ComponentModel.Design.HelpKeywordAttribute("My.Settings")>  _
-        Friend ReadOnly Property Settings() As Global.Employee_management_system.My.MySettings
+        Friend ReadOnly Property Settings() As Global.Employee_Registration_system.My.MySettings
             Get
-                Return Global.Employee_management_system.My.MySettings.Default
+                Return Global.Employee_Registration_system.My.MySettings.Default
             End Get
         End Property
     End Module

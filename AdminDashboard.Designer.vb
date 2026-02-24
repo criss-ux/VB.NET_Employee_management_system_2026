@@ -37,9 +37,11 @@ Partial Class AdminDashboard
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.MenuStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MenuStrip1
@@ -50,7 +52,7 @@ Partial Class AdminDashboard
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.EmployeesToolStripMenuItem, Me.DepartmentsToolStripMenuItem, Me.SettingsToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(-1, 104)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(601, 36)
+        Me.MenuStrip1.Size = New System.Drawing.Size(421, 36)
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -96,7 +98,7 @@ Partial Class AdminDashboard
         'ManageDepartmentsToolStripMenuItem
         '
         Me.ManageDepartmentsToolStripMenuItem.Name = "ManageDepartmentsToolStripMenuItem"
-        Me.ManageDepartmentsToolStripMenuItem.Size = New System.Drawing.Size(270, 36)
+        Me.ManageDepartmentsToolStripMenuItem.Size = New System.Drawing.Size(261, 36)
         Me.ManageDepartmentsToolStripMenuItem.Text = "Add Department"
         '
         'SettingsToolStripMenuItem
@@ -109,7 +111,7 @@ Partial Class AdminDashboard
         'BackupDatabaseToolStripMenuItem
         '
         Me.BackupDatabaseToolStripMenuItem.Name = "BackupDatabaseToolStripMenuItem"
-        Me.BackupDatabaseToolStripMenuItem.Size = New System.Drawing.Size(270, 34)
+        Me.BackupDatabaseToolStripMenuItem.Size = New System.Drawing.Size(250, 34)
         Me.BackupDatabaseToolStripMenuItem.Text = "Backup Database"
         '
         'Label1
@@ -136,11 +138,11 @@ Partial Class AdminDashboard
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(361, 54)
+        Me.Label3.Location = New System.Drawing.Point(309, 54)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(210, 32)
+        Me.Label3.Size = New System.Drawing.Size(221, 32)
         Me.Label3.TabIndex = 3
         Me.Label3.Text = "Admin Dashboard"
         '
@@ -150,11 +152,11 @@ Partial Class AdminDashboard
         Me.Label2.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Label2.Font = New System.Drawing.Font("Segoe UI", 16.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(235, 9)
+        Me.Label2.Location = New System.Drawing.Point(183, 9)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(553, 45)
+        Me.Label2.Size = New System.Drawing.Size(547, 45)
         Me.Label2.TabIndex = 2
-        Me.Label2.Text = "EMPLOYEE MANAGEMENT SYSTEM"
+        Me.Label2.Text = "EMPLOYEE REGISTRATION SYSTEM"
         '
         'PictureBox1
         '
@@ -166,12 +168,23 @@ Partial Class AdminDashboard
         Me.PictureBox1.TabIndex = 3
         Me.PictureBox1.TabStop = False
         '
+        'PictureBox2
+        '
+        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
+        Me.PictureBox2.Location = New System.Drawing.Point(-1, 143)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(1074, 568)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox2.TabIndex = 4
+        Me.PictureBox2.TabStop = False
+        '
         'AdminDashboard
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1073, 713)
+        Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.Panel1)
@@ -186,6 +199,7 @@ Partial Class AdminDashboard
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -205,4 +219,5 @@ Partial Class AdminDashboard
     Friend WithEvents Label2 As Label
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Label3 As Label
+    Friend WithEvents PictureBox2 As PictureBox
 End Class
